@@ -1,0 +1,104 @@
+.row {
+  display: flex;
+  gap: 10px;
+  max-width: 75%;
+}
+
+.rowUser {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.rowAssistant {
+  align-self: flex-start;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.bubble {
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.bubbleUser {
+  background: var(--color-user-bubble);
+  color: var(--color-user-bubble-text);
+}
+
+.bubbleAssistant {
+  background: var(--color-assistant-bubble);
+  color: var(--color-assistant-bubble-text);
+}
+
+.sender {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+
+.content {
+  font-size: 14px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.content :global(p) {
+  margin: 0 0 8px;
+}
+
+.content :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.content :global(pre) {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 8px 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
+.content :global(code) {
+  font-family: 'Menlo', 'Consolas', monospace;
+  font-size: 12px;
+}
+
+.copyBtn {
+  position: absolute;
+  bottom: -10px;
+  right: 8px;
+  background: var(--color-bg-elev);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 3px 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.bubble:hover .copyBtn,
+.bubble:focus-within .copyBtn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .row {
+    max-width: 90%;
+  }
+}
